@@ -7,7 +7,7 @@
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
-				<section class="home">
+				<section data-watch-threshold="0.5" data-watch-once data-watch class="home">
 					<div class="home__main">
 						<div class="main-home">
 							<div class="main-home__title-wrap">
@@ -41,7 +41,7 @@
 						</d>
 					</div>
 				</section>
-				<section class="sections">
+				<section data-watch-threshold="0.3" data-watch class="sections">
 					<div class="sections__container">
 						<article class="sections__item item-sections">
 							<div class="item-sections__image-ibg">
@@ -101,7 +101,7 @@
 						</article>
 					</div>
 				</section>
-				<section class="pieces">
+				<section data-watch-threshold="0.3" data-watch class="pieces">
 					<div class="pieces__container">
 						<div class="pieces__head">
 							<div class="pieces__lable">SHOP CLOTHING</div>
@@ -314,14 +314,78 @@
 				</section>
 				<section class="background">
 					<div class="background__imgage-ibg">
-						<img src="@img/14.jpg" alt="background">
+						<img data-src="@img/14.jpg" alt="background">
 					</div>
 				</section>
-
+				<section data-watch-threshold="0.3" data-watch class="meet">
+					<div class="meet__container">
+						<div class="meet__img-body">
+							<div class="meet__image-ibg">
+								<img data-src="@img/9.jpg" alt="men">
+							</div>
+						</div>
+						<div class="meet__text-body">
+							<div class="meet__text">
+								<h2 class="meet__title title-main">Meet the Bay Area</h2>
+								<p class="meet__txt text-white">Born in the Outer Sunset, San Franpsycho originally began as a surfing film documenting the local Ocean Beach surf scene in 2001. After the film, fans identified with the name and demanded we make clothing. So we learned the art of screen-printing, creating various garments in a dark basement by night, and selling out of of an orange and black zebra-striped van named Big Chaos by day.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-watch-threshold="0.3" data-watch  class="articles">
+					<div class="articles__container">
+						<div class="articles__head">
+							<h4 class="articles__label text-label">OUR ARTICLES</h4>
+							<h2 class="articles__title sub-title">Welcome to the surf club. Discover the best way to express yourself.</h2>
+						</div>
+						<div class="articles__content">
+							<article class="articles__item item-articles">
+								<div class="item-articles__image-ibg">
+									<img src="@img/13.jpg" alt="articles">
+								</div>
+								<div class="item-articles__body">
+									<div class="item-articles__label text-label">NEWS</div>
+									<h3 class="item-articles__title"><a href="#" class="item-articles__title-link sub-title">How to choose the right surfboard for any time of the day.</a></h3>
+									<a href="#" class="item-articles__link btn-white">
+										<div class="item-articles__link-text">Explore</div>
+										<img src="@img/icons/arrow-black.svg" alt="arrow-black">
+									</a>
+								</div>
+							</article>
+							<article class="articles__item item-articles">
+								<div class="item-articles__image-ibg">
+									<img src="@img/15.jpg" alt="articles">
+								</div>
+								<div class="item-articles__body">
+									<div class="item-articles__label text-label">NEWS</div>
+									<h3 class="item-articles__title"><a href="#" class="item-articles__title-link sub-title">10 t-shirts for every mood you’ll ever have</a></h3>
+									<a href="#" class="item-articles__link btn-white">
+										<div class="item-articles__link-text">Explore</div>
+										<img src="@img/icons/arrow-black.svg" alt="arrow-black">
+									</a>
+								</div>
+							</article>
+							<article class="articles__item item-articles">
+								<div class="item-articles__image-ibg">
+									<img src="@img/16.jpg" alt="articles">
+								</div>
+								<div class="item-articles__body">
+									<div class="item-articles__label text-label">NEWS</div>
+									<h3 class="item-articles__title"><a href="#" class="item-articles__title-link sub-title">Welcome to the surf club. Discover the best way to express yourself.</a></h3>
+									<a href="#" class="item-articles__link btn-white">
+										<div class="item-articles__link-text">Explore</div>
+										<img src="@img/icons/arrow-black.svg" alt="arrow-black">
+									</a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 			@@include('html/_cart.htm',{})
 		</div>
+		@@include('html/_preloader.htm',{})
 		@@include('html/_js.htm',{})
 	</body>
 </html>

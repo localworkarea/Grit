@@ -95,6 +95,13 @@
   font-weight: 400;
 }
 
+.text-label {
+  font-size: rem(12);
+  line-height: calc(20/12);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 // ==== INPUTS / FORMS ============================================
 .form-input {
   width: 100%;
