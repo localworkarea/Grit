@@ -1,0 +1,106 @@
+.footer {
+  background-color: white;
+  border-top: 1px solid #ebedee;
+  // .footer__container
+  &__container {
+  }
+	// .footer__top
+	&__top {
+    display: flex;
+    align-items: center;
+    padding: rem(60) 0;
+    column-gap: rem(10);
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+	}
+	// .footer__text
+	&__text-top {
+    width: 50%;
+    font-size: rem(30);
+    line-height: calc(38/30);
+    font-weight: 500;
+    @media (max-width:$tablet){
+      &:not(:last-child) {
+        width: 100%;
+        margin-bottom: rem(30);
+      }  
+    }
+	}
+	// .footer__form
+	&__form {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    position: relative;
+    .form__error {
+      position: absolute;
+      top: -13px;
+      left: 20px;
+    }
+    @media (max-width:$tablet){
+      width: 100%;
+    }
+    @media (max-width:$mobileSmall){
+       flex-direction: column; 
+       row-gap: rem(10);
+    }
+	}
+	// .footer__input
+	&__input {
+	}
+	// .footer__btn
+	&__btn {
+    @media (max-width:$mobileSmall){
+       width: 100%; 
+    }
+	}
+	// .footer__bottom
+	&__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-bottom", 25, 15);
+    border-top: 1px solid #ebedee;
+    @media (max-width:$mobileSmall){
+        flex-direction: column;
+        text-align: center;
+        row-gap: 20px;
+    }
+	}
+
+  // .footer__logo
+  &__logo {
+    img {
+      @include adaptiveValue("height", 25, 16);
+    }
+  }
+  // .footer__contact
+  &__contact{
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+  }
+  // .footer__text
+  &__text {
+    font-size: rem(10);
+    line-height: calc(20/10);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(147, 147, 147);
+    // &:not(:last-child) {
+    //   margin-bottom: rem(2);
+    // }
+  }
+  // .footer__link
+  &__link {
+    font-size: rem(14);
+    line-height: 1.4;
+  }
+  // .footer__email
+  &__email {
+  }
+}
