@@ -10,6 +10,25 @@
     align-items: center;
     height: 100%;
   }
+  .loaded & {
+    &._watcher-view {
+      .main-home__title,
+      .main-home__text,
+      .link-main-home__about,
+      .link-main-home__btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .submain-home__image-ibg {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+      .submain-home__link {
+        opacity: 1;
+      }
+    }
+  }
+
   // .home__main
   &__main {
     width: 100%;
@@ -52,13 +71,20 @@
   }
   // .main-home__title
   &__title {
+    transition: all .7s ease-in-out 0s;
+    opacity: 0;
+    transform: translateY(30px);
+    overflow: hidden;
     &:not(:last-child) {
       margin-bottom: rem(25);
     }
   }
   // .main-home__text
   &__text {
-    
+    transition: all .7s ease 0.3s;
+    opacity: 0;
+    transform: translateY(50%);
+    overflow: hidden;
   }
   // .main-home__link
   &__link {
@@ -73,7 +99,9 @@
     padding: rem(36);
     column-gap: rem(36);
     background-color: $mainColor;
-    transition: all .3s ease;
+    transform: translateY(20%);
+    opacity: 0;
+    transition: transform 1s ease 0.7s, opacity 1s ease 0.7s, background-color .3s ease 0s;
     &:hover {
       background-color: black;
     }
@@ -120,7 +148,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: #435c50;
-    transition: all .3s ease;
+    transform: translateY(20%);
+    opacity: 0;
+    transition: background-color .3s ease, transform .7s ease .1s, opacity .7s ease .1s;
     &:hover {
       background-color: #344e41;
       .link-main-home__btn-arrow {
@@ -144,10 +174,14 @@
 
 .submain-home {
   position: relative;
-  // .submain-home__image
+  overflow: hidden;
+  // .submain-home__image-ibg
   &__image-ibg {
     width: 100%;
     height: 100%;
+    transition: all 1.5s ease 0.3s;
+    transform: translateX(0%) scale(1.5);
+    opacity: 0;
     overflow: hidden;
     @media (max-width:$tablet){
       height: rem(551);
@@ -179,6 +213,8 @@
     justify-content: space-between;
     background-color: white;
     column-gap: rem(5);
+    opacity: 0;
+    transition: opacity .5s ease-out 1s;
     @media (max-width:$tablet){
       position: relative;
       background-color: $mainColor;
@@ -221,6 +257,17 @@
   }
   // .sections__item
   &__item {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all .6s ease;
+    @media (min-width:$tablet){
+      &:nth-child(2){transition: all .5s ease .3s;} 
+      &:nth-child(4){transition: all .5s ease .3s;} 
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -315,10 +362,22 @@
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 100, 30);
     }
+    &._watcher-view {
+      .pieces__lable{
+        opacity: 0.7;
+        transform: translateX(0);
+      }
+      .pieces__title {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
   // .pieces__lable
   &__lable {
-    opacity: 0.7;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all .7s ease-out;
     font-size: rem(12);
     line-height: calc(20/12);
     font-weight: 600;
@@ -329,6 +388,9 @@
   }
   // .pieces__title
   &__title {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all .7s ease-out;
   }
   // .pieces__content
   &__content {
@@ -359,10 +421,14 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: rem(7);
-  border: rem(1) solid transparent;
+  border: rem(1) solid rgba(24, 24, 29, 0.1);
+  transition: all .3s ease;
+  opacity: 0;
+  transform: translateY(10%) scale(1.05);
   @media (any-hover: hover) {
     &:hover {
-      border: rem(1) solid $mainColor;
+      border: rem(1) solid rgba(24, 24, 29, 0.54);
+      box-shadow: 0 0 0.9375rem #8f8f8f;
       .item-pieces__content {
         color: white;
         background-color: $mainColor;
@@ -370,9 +436,129 @@
     }
   }
 
+  &._watcher-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    @media (min-width:$tablet){
+      &:nth-child(1) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(2) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(3) {
+        transition: all .6s ease-out .4s;
+      }
+      &:nth-child(4) {
+        transition: all .6s ease-out .6s;
+      }
+      &:nth-child(5) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(6) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(7) {
+        transition: all .6s ease-out .4s;
+      }
+      &:nth-child(8) {
+        transition: all .6s ease-out .6s;
+      }
+      &:nth-child(9) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(10) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(11) {
+        transition: all .6s ease-out .4s;
+      }
+      &:nth-child(12) {
+        transition: all .6s ease-out .6s;
+      }
+      &:nth-child(13) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(14) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(15) {
+        transition: all .6s ease-out .6s;
+      }
+    }
+    @media (max-width:$tablet){
+      &:nth-child(1) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(2) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(3) {
+        transition: all .6s ease-out ;
+      }
+      &:nth-child(4) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(5) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(6) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(7) {
+        transition: all .6s ease-out ;
+      }
+      &:nth-child(8) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(9) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(10) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(11) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(12) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(13) {
+        transition: all .6s ease-out;
+      }
+      &:nth-child(14) {
+        transition: all .6s ease-out .2s;
+      }
+      &:nth-child(15) {
+        transition: all .6s ease-out;
+      }
+    }
+    @media (max-width:$mobileSmall){
+      transition: all .6s ease-out;
+    }
+  }
+
+  .touch & {
+    border: rem(1) solid rgba(24, 24, 29, 0.54);
+    .item-pieces__content {
+      color: white;
+      background-color: $mainColor;
+    }
+    .item-pieces__button {
+      transform: translateY(0px);
+      opacity: .85;
+    }
+    .item-pieces__image-ibg {
+      &::before {
+        opacity: .8;
+        visibility: visible;
+      }
+    }
+  }
+
   // .item-pieces__image-ibg
   &__image-ibg {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(251, 251, 251);
     display: flex;
     height: rem(360);
     overflow: hidden;
@@ -442,9 +628,11 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: rem(25) rem(10) rem(15);
     flex: 1 1 auto;
     transition: all .3s ease;
+    background-color: #f5f5f5;
   }
   // .item-pieces__title
   &__title {
@@ -627,8 +815,10 @@
   overflow: hidden;
   min-height: rem(460);
   height: 100%;
+  transition: all .3s ease;
   @media (any-hover: hover) {
     &:hover {
+      box-shadow: 0 0 0.9375rem #8f8f8f;
       .item-articles__image-ibg {
         img {
           transform: scale(1.05);
